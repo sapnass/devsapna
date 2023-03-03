@@ -13,23 +13,11 @@ import com.innovation.helper.WaitUtility;
 
 public class FlipkartAutomationPage extends BaseLibrary {
 
-	// Class Level Variables.
+	/**
+	 * Class Level Variables
+	 */
 	public boolean isVerify;
 	public WaitUtility wait = new WaitUtility();
-
-	// xpath variables
-//	private static WebElement popUpLoginText = driver
-//			.findElement(By.xpath(FlipkartAutomationConstants.POPUP_LOGIN_TEXT));
-//	private static WebElement popUpCrossButton = driver
-//			.findElement(By.xpath(FlipkartAutomationConstants.POPUP_CROSS_BUTTON));
-//	private static WebElement bannerArrowButton = driver
-//			.findElement(By.xpath(FlipkartAutomationConstants.BANNER_ARROW_BUTTON));
-//	private static WebElement banner = driver.findElement(By.xpath(FlipkartAutomationConstants.BANNER));
-//	private static WebElement electronicsMenu = driver
-//			.findElement(By.xpath(FlipkartAutomationConstants.ELECTRONICS_MENU));
-//	private static List<WebElement> electronicsSubMenuList = driver
-//			.findElements(By.xpath(FlipkartAutomationConstants.ELECTONICS_SUBMENU_LIST));
-//	private static List<WebElement> bannerList = driver.findElements(By.xpath(FlipkartAutomationConstants.BANNER_LIST));
 
 	/**
 	 * Constructor To Initialize the PageFactory
@@ -43,7 +31,7 @@ public class FlipkartAutomationPage extends BaseLibrary {
 	 * 
 	 * @param expectedPopUpText
 	 * @return
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 */
 	public boolean isLoginPopUpDisplayed(String expectedPopUpText) throws InterruptedException {
 		Thread.sleep(2000);
@@ -54,7 +42,8 @@ public class FlipkartAutomationPage extends BaseLibrary {
 
 	/**
 	 * Click On PopUp Cross Button
-	 * @throws InterruptedException 
+	 * 
+	 * @throws InterruptedException
 	 */
 	public void closePopUp() throws InterruptedException {
 		Thread.sleep(2000);
@@ -82,7 +71,8 @@ public class FlipkartAutomationPage extends BaseLibrary {
 
 	/**
 	 * Click On Banner
-	 * @throws InterruptedException 
+	 * 
+	 * @throws InterruptedException
 	 */
 	public void clickOnBanner() throws InterruptedException {
 		Thread.sleep(2000);
@@ -94,15 +84,16 @@ public class FlipkartAutomationPage extends BaseLibrary {
 	 * 
 	 * @param expectedElectronicsMenuText
 	 * @return
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 */
 	public boolean isElectronicsMenuDisplayed(String expectedElectronicsMenuText) throws InterruptedException {
 		Thread.sleep(2000);
-		String actualElectronicsMenuText = driver.findElement(By.xpath(FlipkartAutomationConstants.ELECTRONICS_MENU)).getText();
+		String actualElectronicsMenuText = driver.findElement(By.xpath(FlipkartAutomationConstants.ELECTRONICS_MENU))
+				.getText();
 		isVerify = actualElectronicsMenuText.equals(expectedElectronicsMenuText);
 		return isVerify;
 	}
-	
+
 	/**
 	 * Mouse Hover on the Electronics Menu
 	 * 
